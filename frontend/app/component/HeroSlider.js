@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const images = [
   "https://www.91astrology.com/images/chat_banner.png",
+  "https://www.91astrology.com/images/chat_banner.png",
   "https://www.91astrology.com/images/chat_banner.png"
 ];
 
@@ -13,6 +14,7 @@ export default function HeroSlider() {
   const goToSlide = (index) => {
     setCurrentIndex(index);
   };
+
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4 relative">
