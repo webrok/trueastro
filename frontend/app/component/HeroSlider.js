@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const images = [
   "https://www.91astrology.com/images/chat_banner.png",
+  "https://www.91astrology.com/images/shop_now.png",
   "https://www.91astrology.com/images/chat_banner.png"
 ];
 
@@ -14,13 +15,14 @@ export default function HeroSlider() {
     setCurrentIndex(index);
   };
 
+
   return (
     <div className="w-full max-w-4xl mx-auto p-4 relative">
       <div className="overflow-hidden rounded-lg">
         <img
           src={images[currentIndex]}
           alt={`Slide ${currentIndex + 1}`}
-          className="w-full h-64 object-contain rounded-lg transition-transform duration-500"
+          className="w-full object-contain rounded-lg transition-transform duration-500"
         />
       </div>
   
@@ -30,7 +32,7 @@ export default function HeroSlider() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 mx-1 rounded-full ${
+            className={`w-3.5 h-1.5 mx-1 cursor-pointer rounded-full ${
               index === currentIndex ? "bg-blue-500" : "bg-gray-300"
             }`}
           ></button>
