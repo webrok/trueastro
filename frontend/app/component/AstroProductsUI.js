@@ -1,6 +1,7 @@
 'use client' 
 
 import React, { useState } from 'react';
+import "./AstroProductsUI.css";
 import { Car, Bike, Heart, Umbrella, CircleDollarSign, Store, Users, BadgeDollarSign, LayoutGrid } from 'lucide-react';
 import AstroModal from './AstroModal';
 
@@ -135,7 +136,7 @@ export default function InsuranceProductsWithModal() {
   ];
 
   return (
-    <div className="p-6 rounded-3xl border border-gray-200 max-w-5xl mx-auto">
+    <div className="p-6 rounded-3xl border border-gray-200 max-w-5xl mlr-m-15 mx-auto">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
         {products.map((product, index) => (
           <div 

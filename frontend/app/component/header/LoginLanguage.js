@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { FaGlobe } from 'react-icons/fa';
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const LoginLanguage = ({ language, setLanguage }) => {
   const [langOpen, setLangOpen] = useState(false);
@@ -18,14 +18,15 @@ const LoginLanguage = ({ language, setLanguage }) => {
   return (
     <>
       {/* Language Selector */}
+      <div className='flex'>
       <div 
-        className="ml-6 relative"
+        className="ml-3 mr-3 relative"
         ref={dropdownRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <button className="flex items-center border border-gray-200 px-2 py-1 rounded-md language-btn">
-          <FaGlobe className="mr-1" /> {language} ▼
+        <button className="flex items-center px-2 py-1 rounded-md language-btn">
+           {language} <IoMdArrowDropdown />
         </button>
         
         {langOpen && (
@@ -41,11 +42,13 @@ const LoginLanguage = ({ language, setLanguage }) => {
             ))}
           </div>
         )}
+        </div>
+        <div className="hidden md:flex">
+            <button className="bg-yellow-400 text-white px-5 py-1 rounded-sm cursor-pointer login text-sm">Login</button>
+        </div>
       </div>
       
-      <div className="hidden md:flex">
-        <button className="bg-purple-500 text-white px-5 py-1 rounded-full cursor-pointer login">Login</button>
-      </div>
+      
     </>
   );
 };

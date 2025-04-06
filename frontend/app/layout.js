@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./component/header/Header";
 import HeaderNotice from "./component/header/HeaderNotice";
+import Footer from "./component/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,13 +22,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <HeaderNotice />
-         <Header />
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>TrueAstro</title>
+      </head>
+      <body>
         {children}
-    
       </body>
     </html>
   );
