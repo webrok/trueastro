@@ -6,9 +6,13 @@ const Tabs = () => {
   const [activeTab, setActiveTab] = useState("tab1");
 
   return (
-    <div className="bg-yellow-100 mb-4">
+    <div className="bg-gray-50 text-center">
+      <div className="border-t border-gray-200 max-w-5xl pt-10 mlr-m-15 mx-auto justify-center">
+          <h3 className="text-3xl font-semibold text-gray-800">Our True Astro Partners</h3>
+          <p className="text-sm text-gray-600">We're associated with india's popular insurance companies.</p>
+      </div>
         <div className="p-4">
-          <div className="flex space-x-4 border-b">
+          <div className="flex space-x-4 max-w-5xl mlr-m-15 mx-auto justify-center">
             <button
               className={`pb-2 ${activeTab === "tab1" ? "border-b-2 border-blue-500 font-bold" : ""}`}
               onClick={() => setActiveTab("tab1")}

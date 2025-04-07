@@ -21,7 +21,7 @@ export default function NavMenu() {
           Horoscope <IoMdArrowDropdown />
         </button>
         {horoscopeOpen && (
-          <div className="absolute left-0 mt-2 w-48 bg-white border rounded-md shadow-md z-1">
+          <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-md z-1">
             {['Daily', 'Weekly', 'Monthly'].map((category, index) => (
               <div key={index} className="relative">
                 <button
@@ -31,7 +31,7 @@ export default function NavMenu() {
                   {category} <IoMdArrowDropright />
                 </button>
                 {subMenuOpen === category && (
-                  <div className="absolute left-full top-0 mt-0 w-48 bg-white border rounded-md shadow-md">
+                  <div className="absolute left-full top-0 mt-0 ml-1  w-48 bg-white border border-gray-200 rounded-md shadow-md">
                     {['Aries', 'Taurus', 'Gemini'].map((sign, i) => (
                       <div key={i} className="relative">
                         <button
