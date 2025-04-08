@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import HeroSlider from "../HeroSlider";
+import AstrotalkSlider from "./AstrotalkSlider";
 
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -17,20 +17,20 @@ const Tabs = () => {
               className={`pb-2 ${activeTab === "tab1" ? "border-b-2 border-blue-500 font-bold" : ""}`}
               onClick={() => setActiveTab("tab1")}
             >
-              Tab 1
+              Carrier
             </button>
             <button
               className={`pb-2 ${activeTab === "tab2" ? "border-b-2 border-blue-500 font-bold" : ""}`}
               onClick={() => setActiveTab("tab2")}
             >
-              Tab 2
+              Love
             </button>
           </div>
 
           <div className="mt-4">
             {activeTab === "tab1" && <div>
               
-              <HeroSlider />
+             <AstrotalkSlider />
               
               </div>}
             {activeTab === "tab2" && <div>This is content of Tab 2</div>}

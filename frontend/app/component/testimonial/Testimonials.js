@@ -39,19 +39,22 @@ const Testimonials = () => {
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-              <p className="text-gray-700 italic">"{testimonial.review}"</p>
-              <div className="mt-4 items-center">
+              <div className="mt-1 mb-3 items-center">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-15 h-15 rounded-full m-auto"
+                  className="w-25 h-25 rounded-full m-auto"
                 />
                 <div>
                   <h4 className="font-bold text-gray-800">{testimonial.name}</h4>
                   <p className="text-sm text-gray-500">{testimonial.date}</p>
                 </div>
-              </div>
-              <div className="mt-2 text-yellow-500">{'⭐'.repeat(testimonial.rating)}</div>
+                <div className="mt-1 text-yellow-500">{'⭐'.repeat(testimonial.rating)}</div>
+              </div> 
+
+              <p className="text-gray-700 italic line-clamp-3">"{testimonial.review}"</p>
+              
+              
             </div>
           ))}
         </div>

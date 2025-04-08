@@ -5,3 +5,10 @@
 .menubar a:hover{
     color: var(--color-purple-600);
 }
+
+.slick-initialized .slick-slide>div {
+    margin: 0 10px;
+}
+.slick-initialized .slick-slide.slick-active{
+
+}

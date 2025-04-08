@@ -22,36 +22,15 @@ export default function Header() {
         <LogoLanguage language={language} setLanguage={setLanguage} />
         
         {/* Desktop Menu Component */}
-        <div className="hidden md:flex">
-          <NavMenu />
-        </div>
+        <NavMenu />
 
         {/* Login Button */}
         
         <LoginLanguage language={language} setLanguage={setLanguage} />
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-black text-2xl"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <HiX /> : <HiMenu />}
-        </button>
+      
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden flex flex-col items-center space-y-4 mt-4 bg-white shadow-md py-4">
-          {['Horoscope', 'Reports', 'Store', 'Blogs', 'Celebrity', 'Join Us'].map((item) => (
-            <Link key={item} href={`/${item.toLowerCase().replace(/\s/g, "-")}`} onClick={closeMenu}>
-              {item}
-            </Link>
-          ))}
-          <button className="bg-purple-500 text-white px-4 py-2 rounded-full" onClick={closeMenu}>
-            Login
-          </button>
-        </div>
-      )}
     </nav>
   );
 }
