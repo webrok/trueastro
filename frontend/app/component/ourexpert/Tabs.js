@@ -15,25 +15,23 @@ const Tabs = () => {
           <div className="flex space-x-4 max-w-5xl mlr-m-15 mx-auto justify-center">
             <button
               className={`pb-2 ${activeTab === "tab1" ? "border-b-2 border-blue-500 font-bold" : ""}`}
-              onClick={() => setActiveTab("tab1")}
-            >
+              onClick={() => setActiveTab("tab1")}>
               Carrier
             </button>
             <button
               className={`pb-2 ${activeTab === "tab2" ? "border-b-2 border-blue-500 font-bold" : ""}`}
-              onClick={() => setActiveTab("tab2")}
-            >
+              onClick={() => setActiveTab("tab2")}>
               Love
             </button>
           </div>
 
           <div className="mt-4">
-            {activeTab === "tab1" && <div>
-              
-             <AstrotalkSlider />
-              
+              {activeTab === "tab1" && <div>
+                  <AstrotalkSlider />
               </div>}
-            {activeTab === "tab2" && <div>This is content of Tab 2</div>}
+              {activeTab === "tab2" && <div>
+                  <AstrotalkSlider />
+              </div>}
           </div>
         </div>
     </div>

@@ -204,11 +204,10 @@ function AstrotalkSlider() {
                 <img src={astro.profileImage} alt={astro.name} className="w-20 rounded-full m-auto" />
                 <h3 className="text-md font-semibold text-gray-800 mt-3">{astro.name}</h3>
                 <p className="text-sm text-gray-600 line-clamp-1">{astro.specialties.join(", ")}</p>
-                <p className="text-sm text-gray-600">Experience: {astro.experience}</p>
-                <p className="text-sm text-gray-600">Languages: {astro.languages.join(", ")}</p>
-                <p className="text-sm text-gray-600">Rating: ⭐ {astro.rating} ({astro.reviews} reviews)</p>
-                <p className="text-sm text-gray-600">Availability: <span className={`font-medium ${astro.availability === "Online" ? "text-green-600" : astro.availability === "Busy" ? "text-yellow-600" : "text-gray-400"}`}>{astro.availability}</span></p>
-
+                <p className="text-sm text-gray-600 line-clamp-1">Experience: {astro.experience}</p>
+                <p className="text-sm text-gray-600 line-clamp-1">Languages: {astro.languages.join(", ")}</p>
+                <p className="text-sm text-gray-600 line-clamp-1">Rating: ⭐ {astro.rating} ({astro.reviews} reviews)</p>
+                <p className="text-sm text-gray-600 line-clamp-1">Availability: <span className={`font-medium ${astro.availability === "Online" ? "text-green-600" : astro.availability === "Busy" ? "text-yellow-600" : "text-gray-400"}`}>{astro.availability}</span></p>
                 <button className="bg-yellow-400 text-white mt-2 px-5 py-1 rounded-sm cursor-pointer login text-sm">Chat with us</button>
               </div>
             ))}

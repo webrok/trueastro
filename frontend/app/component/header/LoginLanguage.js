@@ -99,7 +99,7 @@ const LoginLanguage = ({ language, setLanguage }) => {
   return (
     <>
       {/* Language Selector */}
-      <div className='flex'>
+      <div className='flex language-container'>
       <div 
         className="ml-3 mr-3 relative"
         ref={dropdownRef}
@@ -111,7 +111,7 @@ const LoginLanguage = ({ language, setLanguage }) => {
         </button>
         
         {langOpen && (
-          <div className="absolute right-0 mt-2 w-28 bg-white border rounded-md shadow-md z-10">
+          <div className="absolute right-0 mt-0 w-28 bg-white border border-gray-200 rounded-md shadow-md z-10">
             {['English', 'Hindi', 'தமிழ்'].map((lang) => (
               <button
                 key={lang}

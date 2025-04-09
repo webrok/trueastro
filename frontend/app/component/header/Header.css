@@ -9,6 +9,17 @@
 .slick-initialized .slick-slide>div {
     margin: 0 10px;
 }
-.slick-initialized .slick-slide.slick-active{
-
+@media screen and (max-width: 767px) {
+        #mobile-menu {
+            position: fixed;
+            height: 93vh;
+            box-shadow: none;
+            overflow: auto;
+        }  
+    .mobile-menu {
+        order: 1;
+    }
+    .language-container{
+        margin-left: auto;
+    }
 }

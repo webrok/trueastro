@@ -83,7 +83,7 @@ export default function AstroModal({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50" style={{ backgroundColor: "rgba(0,0,0,0.5)" }}>
-      <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded-3xl max-w-2xl w-full">
         <div className="p-6">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-3xl font-bold text-gray-800">Insurance Products</h2>
@@ -95,7 +95,7 @@ export default function AstroModal({ isOpen, onClose }) {
             </button>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-8 max-h-[90vh] overflow-y-auto">
             {categories.map((category, index) => (
               <div key={index} className="space-y-4">
                 <div className="relative">

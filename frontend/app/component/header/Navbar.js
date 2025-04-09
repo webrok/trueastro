@@ -6,7 +6,7 @@ import Link from 'next/link';
 // --- Data Structure ---
 const menuItems = [
     {
-        title: "Insurance",
+        title: "Horoscope",
         path: "#", // Or '/insurance'
         children: [ // Level 1 Items (Column 1)
             {
@@ -57,7 +57,7 @@ const menuItems = [
             { title: "Travel Insurance", path: "/insurance/travel", children: [/* L2 Items */] },
         ],
     },
-    { title: "Insurance Advisors", path: "/insurance-advisors" },
+    { title: "Reports", path: "/insurance-advisors" },
     { title: "Renew", path: "/renew" },
     {
         title: "Support",
@@ -68,7 +68,6 @@ const menuItems = [
         ]
     },
     { title: "News", path: "/news" },
-    { title: "Become POSP Agent", path: "/posp-agent" },
 ];
 
 // --- SVG Icons ---
@@ -307,6 +306,7 @@ const NavMenu = () => {
     }
 
     // --- Mobile Menu Toggle Logic ---
+   
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
         // Optional: Close any open desktop dropdown when opening mobile menu
@@ -345,19 +345,22 @@ const NavMenu = () => {
     useEffect(() => {
         if (isMobileMenuOpen) {
             document.body.style.overflow = 'hidden';
+            document.body.classList.add("openMenu");
         } else {
             document.body.style.overflow = 'unset';
+            document.body.classList.remove("openMenu");
         }
         // Cleanup function to reset overflow when component unmounts
         return () => {
             document.body.style.overflow = 'unset';
+            document.body.classList.add("openMenu");
         };
     }, [isMobileMenuOpen]);
 
 
     return (
         // Added relative positioning for mobile menu absolute positioning context
-        <header className=" sticky top-0 z-50">
+        <header className=" sticky top-0 z-50 mobile-menu">
             <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between">
                     
@@ -397,12 +400,14 @@ const NavMenu = () => {
                         </ul>
                     </div>
 
-                     {/* --- Mobile Menu Button (Visible only on 'md' and below) --- */}
-                     <div className="flex items-center md:hidden">
+                </div>
+            </nav>
+            {/* --- Mobile Menu Button (Visible only on 'md' and below) --- */}
+            <div className="flex items-center md:hidden">
                         <button
                             onClick={toggleMobileMenu}
                             type="button"
-                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500"
+                            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500 mobile-menu-icon"
                             aria-controls="mobile-menu"
                             aria-expanded={isMobileMenuOpen}
                             aria-label="Toggle menu" // Added aria-label
@@ -411,9 +416,6 @@ const NavMenu = () => {
                             {isMobileMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
                         </button>
                     </div>
-
-                </div>
-            </nav>
 
             {/* --- Mobile Menu Panel (Hidden on 'md' and up) --- */}
              {/* Use transition for smooth opening/closing */}
